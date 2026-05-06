@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>F&F Crew Switcher — DOM Lab</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+
+    <!-- 1. Add an <h1> with id="page-title" and the text "Welcome to the Crew" -->
+
+
+    <p id="tagline">You don't turn your back on family. Even when they do.</p>
+
+    <!-- ============================== -->
+    <!-- CREW CARD                       -->
+    <!-- ============================== -->
+    <div id="crew-card" class="card">
+
+      <!-- 2. Add an <h2> with id="member-name" and the text "Dominic Toretto" -->
+
+
+      <img
+        id="member-photo"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Vin_Diesel_by_Gage_Skidmore.jpg/440px-Vin_Diesel_by_Gage_Skidmore.jpg"
+        alt="Crew member photo"
+      />
+
+      <!-- 3. Add a <p> with class="bio" and the text:
+           "Street racer. Family man. Drives a 1970 Dodge Charger R/T." -->
+
+
+      <ul id="stats">
+        <!-- 4. Add three <li> elements with class="stat":
+             - "Driving: 99"
+             - "Loyalty: 100"
+             - "Quarter Mile: 9.4s"
+        -->
+
+
+      </ul>
+
+      <button id="remove-member-btn">Remove from Crew</button>
+    </div>
+
+    <!-- ============================== -->
+    <!-- CHARACTER SWITCHER              -->
+    <!-- ============================== -->
+    <div id="switcher" class="card">
+      <h3>Switch Crew Member</h3>
+      <button class="switch-btn" data-member="dom">Dom</button>
+      <button class="switch-btn" data-member="brian">Brian</button>
+      <button class="switch-btn" data-member="letty">Letty</button>
+      <button class="switch-btn" data-member="hobbs">Hobbs</button>
+    </div>
+
+    <!-- ============================== -->
+    <!-- ADD-A-MEMBER FORM               -->
+    <!-- ============================== -->
+    <div id="form-section" class="card">
+      <h3 id="form-title">Add Yourself to the Crew</h3>
+
+      <!-- 5. Build a form with id="add-member-form" containing:
+           - a <label for="new-name"> with text "Name"
+           - an <input type="text" id="new-name" name="new-name">
+           - a <label for="new-ride"> with text "Ride"
+           - an <input type="text" id="new-ride" name="new-ride">
+           - an <input type="submit" value="Add to Crew">
+      -->
+
+
+      <ul id="recruits">
+        <!-- New recruits will be added here by JavaScript -->
+      </ul>
+    </div>
+
+    <!-- ============================== -->
+    <!-- COLOR CONTROLS                  -->
+    <!-- ============================== -->
+    <div id="color-controls" class="card">
+      <h3>Customize the Card</h3>
+      <button id="red-btn">Red Tint</button>
+      <button id="blue-btn">Blue Tint</button>
+      <button id="reset-btn">Reset</button>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
