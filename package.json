@@ -1,0 +1,22 @@
+{
+  "name": "js-dom-lab",
+  "version": "1.0.0",
+  "description": "Lab: DOM Manipulation, Events, and Forms (F&F Crew Switcher)",
+  "main": "script.js",
+  "scripts": {
+    "start": "live-server --port=3000",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "keywords": ["javascript", "dom", "events", "forms", "ttpr"],
+  "author": "TTPR @ LAGCC",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "live-server": "^1.2.2"
+  },
+  "jest": {
+    "testEnvironment": "jsdom"
+  }
+}
