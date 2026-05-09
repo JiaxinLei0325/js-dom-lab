@@ -52,6 +52,8 @@ const CREW = {
 // 1a. Use document.getElementById to grab the element with id "page-title".
 //     Save it in a const called pageTitle. Then console.log(pageTitle).
 // TODO 1a:
+const pageTitle = document.getElementById("page-title");
+console.log(pageTitle);
 
 
 // 1b. Use document.getElementsByClassName to grab all elements with the
@@ -59,12 +61,17 @@ const CREW = {
 //     Then console.log statList AND console.log Array.isArray(statList).
 //     (Spoiler from the slides: it's NOT a real array.)
 // TODO 1b:
+const statList = document.getElementsByClassName("stat");
+console.log(statList);
+console.log(Array.isArray(statList));
 
 
 // 1c. Use document.getElementsByTagName to grab every <button> on the page.
 //     Save it in a const called allButtons. Then console.log how many
 //     buttons there are using allButtons.length.
 // TODO 1c:
+const allButtons = document.getElementsByTagName("button");
+console.log(allButtons.length);
 
 
 // 1d. Use document.querySelector to grab the FIRST element matching
@@ -72,6 +79,10 @@ const CREW = {
 //     Then use document.querySelectorAll to grab ALL of them — save that in
 //     a const called allSwitchBtns. console.log both.
 // TODO 1d:
+const firstSwitchBtn = document.querySelector(".switch-btn");
+const allSwitchBtns = document.querySelectorAll(".switch-btn");
+console.log(firstSwitchBtn);
+console.log(allSwitchBtns);
 
 
 /* =========================================================
@@ -84,6 +95,10 @@ const CREW = {
 //    Then call .forEach() on statArray and console.log each stat element's
 //    .innerText. (.forEach would NOT work on the original NodeList!)
 // TODO 2:
+const statArray = [...statList];
+statArray.foreach(function(stat){
+  console.log(stat.innerText);
+});
 
 
 /* =========================================================
@@ -117,6 +132,10 @@ const CREW = {
 //      document.getElementById("stats").appendChild(li);
 //
 // TODO 3:
+function showMember(key){
+  const member = CREW[key];
+  document.getElementById("member-name").innerText = member.name;
+}
 
 
 /* =========================================================

@@ -9,7 +9,7 @@
   <body>
     <div class="container">
       <!-- 1. Add an <h1> with id="page-title" and the text "Welcome to the Crew" -->
-
+      <h1 id="page-title">Welcome to the Crew</h1>
       <p id="tagline">You don't turn your back on family. Even when they do.</p>
 
       <!-- ============================== -->
@@ -17,7 +17,7 @@
       <!-- ============================== -->
       <div id="crew-card" class="card">
         <!-- 2. Add an <h2> with id="member-name" and the text "Dominic Toretto" -->
-
+          <h2 id="member-name">Dominic Toretto</h2>
         <img
           id="member-photo"
           src="https://www.nme.com/wp-content/uploads/2021/10/Fast-Furious.jpg"
@@ -26,13 +26,17 @@
 
         <!-- 3. Add a <p> with class="bio" and the text:
            "Street racer. Family man. Drives a 1970 Dodge Charger R/T." -->
-
+          <p class="bio">Street racer. Family man. Drives a 1970 Dodge Charger R/T.</p>
         <ul id="stats">
           <!-- 4. Add three <li> elements with class="stat":
              - "Driving: 99"
              - "Loyalty: 100"
              - "Quarter Mile: 9.4s"
-        --></ul>
+        -->
+            <li class="stat">Driving: 99</li>
+            <li class="stat">Loyalty: 100</li>
+            <li class="stat">Quarter Mile: 9.4s</li>
+            </ul>
 
         <button id="remove-member-btn">Remove from Crew</button>
       </div>
@@ -61,6 +65,15 @@
            - an <input type="text" id="new-ride" name="new-ride">
            - an <input type="submit" value="Add to Crew">
       -->
+        <form id="add-member-form">
+          <label for="new-name">Name</label>
+          <input type="text" id="new-name" name="new-name">
+  
+          <label for="new-ride">Ride</label>
+          <input type="text" id="new-ride" name="new-ride">
+  
+          <input type="submit" value="Add to Crew">
+        </form>
 
         <ul id="recruits">
           <!-- New recruits will be added here by JavaScript -->
