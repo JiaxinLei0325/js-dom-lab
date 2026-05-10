@@ -152,7 +152,12 @@ function showMember(key){
 //     HINT: <button data-member="dom"> ... </button>
 //           In JS: btn.dataset.member  // "dom"
 // TODO 4a:
-
+allSwitchBtns.forEach(function(btn) {
+  btn.addEventListener("click", function() {
+    const memberKey = btn.dataset.member;
+    showMember(memberKey);
+  });
+});
 
 // 4b. Wire up the "Remove from Crew" button (id="remove-member-btn").
 //     When clicked, remove the entire #crew-card from the page.
@@ -160,7 +165,11 @@ function showMember(key){
 //     Use the parentNode trick from the slides:
 //       oldNode.parentNode.removeChild(oldNode)
 // TODO 4b:
-
+const removeMemberBtn = document.getElementById("remove-member-btn");
+removeMemberBtn.addEventListener("click", function() {
+  const crewCard = document.getElementById("crew-card");
+  crewCard.parentNode.removeChild(crewCard);
+});
 
 /* =========================================================
    PART 5 — FORMS
@@ -186,7 +195,36 @@ function showMember(key){
 //      li.appendChild(deleteBtn);
 //
 // TODO 5:
-
+const addMemberForm = document.getElementById("add-member-form");
+addMemberForm.addEventListener("submit", function(event) {
+  event.preventDefault();
+  
+  const nameInput = document.getElementById("new-name");
+  const rideInput = document.getElementById("new-ride");
+  const name = nameInput.value;
+  const ride = rideInput.value;
+  
+  if (name === "" || ride === "") {
+    return;
+  }
+  
+  const li = document.createElement("li");
+  li.innerText = name + " drives a " + ride + " ";
+  
+  const deleteBtn = document.createElement("button");
+  deleteBtn.className = "delete-btn";
+  deleteBtn.innerText = "Remove";
+  deleteBtn.addEventListener("click", function() {
+    li.parentNode.removeChild(li);
+  });
+  
+  li.appendChild(deleteBtn);
+  
+  document.getElementById("recruits").appendChild(li);
+  
+  nameInput.value = "";
+  rideInput.value = "";
+});
 
 /* =========================================================
    PART 6 — CHANGING STYLES
@@ -201,7 +239,22 @@ function showMember(key){
 //
 //    Use:  document.getElementById("crew-card").style.backgroundColor = "..."
 // TODO 6:
+const redBtn = document.getElementById("red-btn");
+const blueBtn = document.getElementById("blue-btn");
+const resetBtn = document.getElementById("reset-btn");
+const crewCard = document.getElementById("crew-card");
 
+redBtn.addEventListener("click", function() {
+  crewCard.style.backgroundColor = "#5a1a1a";
+});
+
+blueBtn.addEventListener("click", function() {
+  crewCard.style.backgroundColor = "#1a2a5a";
+});
+
+resetBtn.addEventListener("click", function() {
+  crewCard.style.backgroundColor = "#2a2a2a";
+});
 
 /* =========================================================
    STRETCH GOALS (optional)
